@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reservaciones</title>
+</head>
+<body>
+    <h1>Lista de Reservaciones</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Mesa</th>
+        </tr>
+        {% for reservation in reservaciones %}
+        <tr>
+            <td>{{ reservation.cliente.nombre }}</td>
+            <td>{{ reservation.cliente.email }}</td>
+            <td>{{ reservation.fecha }}</td>
+            <td>{{ reservation.hora }}</td>
+            <td>{{ reservation.mesa.numero }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="#">Crear Nueva Reservación</a>
+</body>
+</html>
